@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
      }
 
-    void Movement()
+    public void Movement()
     {
         float moveInput = Input.GetAxis("Horizontal");
         myRigidbody.linearVelocity = new UnityEngine.Vector2(moveInput * moveSpeed, myRigidbody.linearVelocity.y);

@@ -23,17 +23,31 @@ public class EnemyHP : MonoBehaviour
 
         animator.SetTrigger("Hurt");
 
+        //mozgás leállítása 1mpre
+        StartCoroutine(TemporarilyDisableMovement(0.5f));
+
         if (currentHealth <= 0)
         {
-            movement.enabled = !movement.enabled;
+            movement.enabled = false;
             Die();
         }
 
 
     }
     void Die()
+    {
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, 2f);
+    }
+
+    private System.Collections.IEnumerator TemporarilyDisableMovement(float duration)
+    {
+        movement.enabled = false;
+        yield return new WaitForSeconds(duration);
+
+        if (currentHealth > 0)
         {
-            animator.SetBool("isDead", true);
-            Destroy(gameObject, 2f);   
-        }
+            movement.enabled = true;
+        }  
+     }
 }
