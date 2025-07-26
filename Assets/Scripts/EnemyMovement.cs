@@ -34,6 +34,7 @@ public class EnemyScript : MonoBehaviour
                 player.position,
                 speed * Time.deltaTime
             );
+
             if (player.position.x >= transform.position.x)
             {
                 sr.flipX = false;
@@ -41,7 +42,7 @@ public class EnemyScript : MonoBehaviour
             else
             {
                 sr.flipX = true;
-             }
+            }
         }
     }
 

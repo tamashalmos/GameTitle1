@@ -5,9 +5,11 @@ public class EnemyHP : MonoBehaviour
     public Animator animator;
     public int maxHealth = 100;
     int currentHealth;
+    EnemyScript movement;
     void Start()
     {
         currentHealth = maxHealth;
+        movement = GetComponent<EnemyScript>();
     }
 
     public void takeDamage(int damage)
@@ -16,20 +18,22 @@ public class EnemyHP : MonoBehaviour
         {
             return;
         }
-         
+
         currentHealth -= damage;
 
         animator.SetTrigger("Hurt");
 
         if (currentHealth <= 0)
         {
+            movement.enabled = !movement.enabled;
             Die();
         }
 
-        void Die()
+
+    }
+    void Die()
         {
             animator.SetBool("isDead", true);
             Destroy(gameObject, 2f);   
         }
-    }
 }

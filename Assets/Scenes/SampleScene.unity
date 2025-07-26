@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 151389439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.504, y: 0.316, z: 0}
+  m_LocalPosition: {x: 0.504, y: -0.453, z: 0}
   m_LocalScale: {x: 2.3522065, y: 11.767417, z: 1.2380035}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 783138327}
   - component: {fileID: 783138326}
   - component: {fileID: 783138328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3291,7 +3291,7 @@ Transform:
   m_GameObject: {fileID: 795541753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00026248, y: -2.99, z: 0}
+  m_LocalPosition: {x: -0.00026248, y: -1.915, z: 0}
   m_LocalScale: {x: 1.0634375, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3332,7 +3332,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.10665858, y: 0.53731835}
+  m_Offset: {x: 0, y: -0.5}
   m_Size: {x: 0.42823356, y: 1.0503633}
   m_Direction: 0
 --- !u!50 &795541757
@@ -3427,6 +3427,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  jumpForce: 5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &795541762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3440,7 +3444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 151389440}
-  attackRange: 1.16
+  attackRange: 0.98
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
